@@ -1,5 +1,6 @@
 #---------------------------------importes------------------------------------------------------------
 from flask import Flask,render_template,request
+from flask_wtf import CSRFProtect,FlaskForm
 import forms
 
 #-----------------------------------------------------------------------------------------------------
@@ -7,7 +8,8 @@ import forms
 
 #---------------------------------configuracion-------------------------------------------------------
 app=Flask(__name__)
-
+app.secret_key='kjasdkjasd_ASDASD'
+csrf=CSRFProtect(app)
 
 
 
