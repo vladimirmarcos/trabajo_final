@@ -2,7 +2,8 @@
 from flask import Flask,render_template,request
 from flask_wtf import CSRFProtect,FlaskForm
 import forms
-
+from wtforms import FileField
+import os
 #-----------------------------------------------------------------------------------------------------
 
 
@@ -10,6 +11,9 @@ import forms
 app=Flask(__name__)
 app.secret_key='kjasdkjasd_ASDASD'
 csrf=CSRFProtect(app)
+app.config["UPLOAD_FOLDER"]="static/uploads"
+class MyForm (FlaskForm):
+      image =FileField('image')
 
 
 
