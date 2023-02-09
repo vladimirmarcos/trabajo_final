@@ -27,6 +27,10 @@ def login():
     login_form=forms.CommentForm(request.form)  
     return render_template('login.html',form=login_form)
 
+@app.route('/registro',methods=['GET','POST'])
+def registro():
+      registro_form=forms.CommentForm(request.form)  
+      return render_template('registro.html',form=registro_form)
 
 #-----------------------------------------------------------------------------------------------------
 
