@@ -5,6 +5,7 @@ import forms
 from wtforms import FileField
 import os
 from werkzeug.utils import secure_filename
+from flask_bootstrap import Bootstrap
 #-----------------------------------------------------------------------------------------------------
 
 
@@ -14,7 +15,7 @@ app.secret_key='kjasdkjasd_ASDASD'
 csrf=CSRFProtect(app)
 app.config["UPLOAD_FOLDER"]="static/uploads"
 from funcionesvarias import allowed_file,ALLOWED_EXTENSIONS,red
-
+Bootstrap(app)
 class MyForm (FlaskForm):
       image =FileField('image')
 
