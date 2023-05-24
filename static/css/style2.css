@@ -1,0 +1,9 @@
+body{
+
+    display: flex;
+}
+
+footer{
+
+    align-self: flex-end;
+}

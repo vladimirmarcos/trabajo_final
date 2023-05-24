@@ -14,7 +14,7 @@ app=Flask(__name__)
 app.secret_key='kjasdkjasd_ASDASD'
 csrf=CSRFProtect(app)
 app.config["UPLOAD_FOLDER"]="static/uploads"
-from funcionesvarias import allowed_file,ALLOWED_EXTENSIONS,red
+'''from funcionesvarias import allowed_file,ALLOWED_EXTENSIONS,red'''
 Bootstrap(app)
 class MyForm (FlaskForm):
       image =FileField('image')
@@ -29,7 +29,7 @@ class MyForm (FlaskForm):
 #---------------------------------rutas---------------------------------------------------------------
 @app.route('/')
 def index():
-    return render_template ('index.html')
+    return render_template ('nuevo.html')
 
 
 @app.route('/login',methods=['GET','POST'])
@@ -42,7 +42,7 @@ def registro():
       registro_form=forms.CommentForm(request.form)  
       return render_template('registro.html',form=registro_form)
 
-
+''' 
 @app.route('/upload',methods=['GET','POST'])
 def upload ():
     form=MyForm(request.form)
@@ -59,8 +59,7 @@ def upload ():
          return render_template ('mostrar_usuarios.html',mensaje="algo paso ")
     return render_template('upload.html',form=form)   
 
-
-
+'''
 
 
 #-----------------------------------------------------------------------------------------------------
